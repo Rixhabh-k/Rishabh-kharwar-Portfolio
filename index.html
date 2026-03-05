@@ -1,358 +1,393 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Loader</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
-    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rishabh Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body>
-    <div id="loader">
-      <canvas id="webgl"></canvas>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
 
-      <div class="percent-wrapper">
-        <div class="percent">0%</div>
+<body>
+
+  
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+  <div id="loader">
+    <canvas id="webgl"></canvas>
+
+    <div class="percent-wrapper">
+      <div class="percent">0%</div>
+    </div>
+  </div>
+
+  <div class="page">
+    <section class="hero">
+      <div class="menu-btn">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
       </div>
+      <div class="hero-section-warper">
+        <div class="top-text">
+          <h1>Creative</h1>
+          <div class="top-text-img">
+            <div class="top-img"></div>
+            <p>
+              Indian <span>Product Designer</span>, involved in creating
+              better human experiences through design.
+            </p>
+          </div>
+        </div>
+        <div class="middle-text">
+          <div class="text-m">
+            <h1>
+              PR <span><img src="images/toggle 1.svg" alt="" /></span>DUCT
+            </h1>
+          </div>
+        </div>
+        <div class="bottom-text">
+          <img src="images/mac-logo.svg" alt="" />
+          <h1>DES</h1>
+          <div class="designer-i"></div>
+          <h1>GNER</h1>
+        </div>
+        <p>Open to new job offers <span class="active-green"></span></p>
+      </div>
+    </section>
+
+    <!-- Menu Panel (slides in from right) -->
+    <div class="menu-panel">
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </nav>
     </div>
 
-    <div class="page">
-      <section class="hero">
-        <div class="menu-btn">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-        </div>
-        <div class="hero-section-warper">
-          <div class="top-text">
-            <h1>Creative</h1>
-            <div class="top-text-img">
-              <div class="top-img"></div>
-              <p>
-                Indian <span>Product Designer</span>, involved in creating
-                better human experiences through design.
-              </p>
-            </div>
-          </div>
-          <div class="middle-text">
-            <div class="text-m">
-              <h1>
-                PR <span><img src="images/toggle 1.svg" alt="" /></span>DUCT
-              </h1>
-            </div>
-          </div>
-          <div class="bottom-text">
-            <img src="images/mac-logo.svg" alt="" />
-            <h1>DES</h1>
-            <div class="designer-i"></div>
-            <h1>GNER</h1>
-          </div>
-          <p>Open to new job offers <span class="active-green"></span></p>
-        </div>
-      </section>
+    <!-- About Section (slides up over hero) -->
+    <section class="about">
+      <div class="about-inner">
+        <div class="about-content">
+          <div class="about-label">About Me</div>
+          <h2 class="about-heading">
+            I craft digital<br />experiences that<br /><span>inspire.</span>
+          </h2>
+          <p class="about-description">
+            I’m a passionate web developer who enjoys building modern, responsive, and user-focused web applications. I
+            focus on writing clean, efficient code and creating smooth digital experiences that combine functionality
+            with thoughtful design. I work primarily with technologies like HTML, CSS, JavaScript, SCSS, React, and
+            MongoDB, and I’m continuously expanding my skills in backend development and DevOps. I enjoy turning ideas
+            into real products and constantly exploring new tools and technologies to improve the way applications are
+            built and delivered.
 
-      <!-- Menu Panel (slides in from right) -->
-      <div class="menu-panel">
-        <nav class="nav">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
-        </nav>
-      </div>
-
-      <!-- About Section (slides up over hero) -->
-      <section class="about">
-        <div class="about-inner">
-          <div class="about-content">
-            <div class="about-label">About Me</div>
-            <h2 class="about-heading">
-              I craft digital<br />experiences that<br /><span>inspire.</span>
-            </h2>
-            <p class="about-description">
-              A passionate product designer with 5+ years of experience building
-              intuitive, user-centered digital products. I blend aesthetics with
-              functionality to create designs that not only look beautiful but
-              solve real problems.
-            </p>
-            <div class="about-stats">
-              <div class="stat">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years Experience</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">50+</span>
-                <span class="stat-label">Projects Done</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">30+</span>
-                <span class="stat-label">Happy Clients</span>
-              </div>
-            </div>
-          </div>
-          <div class="about-image" id="magnetic-wrap">
-            <img src="images/about-portrait.png" alt="Portrait" id="magnetic-img" />
-          </div>
-        </div>
-      </section>
-
-      <!-- Services Section -->
-      <section class="services-section">
-        <div class="services-card">
-          <div class="services-top">
-            <span class="services-label">BEHIND THE SCENE, BEYOND THE SCREEN</span>
-          </div>
-
-          <div class="services-title-wrap">
-            <h2 class="services-title">SERVICE</h2>
-          </div>
-
-          <div class="services-divider"></div>
-
-          <p class="services-desc">
-            Building modern web products &amp; full-stack solutions — from pixel-perfect
-            interfaces to scalable backend architectures that deliver real impact.
           </p>
-
-          <div class="services-grid">
-            <div class="service-card">
-              <span class="service-num">01</span>
-              <h3 class="service-name">Web Development</h3>
-              <p class="service-text">Building fast, scalable full-stack web applications with modern frameworks and clean code.</p>
-              <div class="service-line"></div>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Projects Built</span>
             </div>
-            <div class="service-card">
-              <span class="service-num">02</span>
-              <h3 class="service-name">UI / UX Engineering</h3>
-              <p class="service-text">Creating smooth user experiences and interactive interfaces that feel natural and intuitive.</p>
-              <div class="service-line"></div>
+            <div class="stat">
+              <span class="stat-number">8+</span>
+              <span class="stat-label">Technologies Used</span>
             </div>
-            <div class="service-card">
-              <span class="service-num">03</span>
-              <h3 class="service-name">Backend Architecture</h3>
-              <p class="service-text">Designing APIs, databases, and scalable server systems built for growth and reliability.</p>
-              <div class="service-line"></div>
-            </div>
-            <div class="service-card">
-              <span class="service-num">04</span>
-              <h3 class="service-name">Performance Optimization</h3>
-              <p class="service-text">Improving speed, accessibility, and reliability so every interaction feels effortless.</p>
-              <div class="service-line"></div>
+            <div class="stat">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Hours of Coding</span>
             </div>
           </div>
         </div>
-      </section>
+        <div class="about-image" id="magnetic-wrap">
+          <img src="images/about-portrait.png" alt="Portrait" id="magnetic-img" />
+        </div>
+      </div>
+    </section>
 
-      <!-- Work Showcase Section -->
-      <section class="work-section">
-        <div class="work-card">
-          <div class="work-top">
-            <span class="work-label">SELECTED WORK</span>
+    <!-- Services Section -->
+    <section class="services-section">
+      <div class="services-card">
+        <div class="services-top">
+          <span class="services-label">BEHIND THE SCENE, BEYOND THE SCREEN</span>
+        </div>
+
+        <div class="services-title-wrap">
+          <h2 class="services-title">SERVICE</h2>
+        </div>
+
+        <div class="services-divider"></div>
+
+        <p class="services-desc">
+          Building modern web products &amp; full-stack solutions — from pixel-perfect
+          interfaces to scalable backend architectures that deliver real impact.
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="service-num">01</span>
+            <h3 class="service-name">Web Development</h3>
+            <p class="service-text">Building fast, scalable full-stack web applications with modern frameworks and clean
+              code.</p>
+            <div class="service-line"></div>
           </div>
-
-          <div class="work-title-wrap">
-            <h2 class="work-title">WORK</h2>
+          <div class="service-card">
+            <span class="service-num">02</span>
+            <h3 class="service-name">UI / UX Engineering</h3>
+            <p class="service-text">Creating smooth user experiences and interactive interfaces that feel natural and
+              intuitive.</p>
+            <div class="service-line"></div>
           </div>
+          <div class="service-card">
+            <span class="service-num">03</span>
+            <h3 class="service-name">Backend Architecture</h3>
+            <p class="service-text">Designing APIs, databases, and scalable server systems built for growth and
+              reliability.</p>
+            <div class="service-line"></div>
+          </div>
+          <div class="service-card">
+            <span class="service-num">04</span>
+            <h3 class="service-name">Performance Optimization</h3>
+            <p class="service-text">Improving speed, accessibility, and reliability so every interaction feels
+              effortless.</p>
+            <div class="service-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="work-divider"></div>
+    <!-- Work Showcase Section -->
+    <section class="work-section">
+      <div class="work-card">
+        <div class="work-top">
+          <span class="work-label">SELECTED WORK</span>
+        </div>
 
-          <div class="work-grid">
+        <div class="work-title-wrap">
+          <h2 class="work-title">WORK</h2>
+        </div>
+
+        <div class="work-divider"></div>
+
+        <div class="work-grid">
+          <a href="https://github.com/Rixhabh-k/Rishabh-kharwar-Portfolio" target="_blank" rel="noopener noreferrer"
+            class="work-item-link">
             <div class="work-item" data-tilt>
               <div class="work-img-wrap">
-                <img src="images/work-portfolio.png" alt="Developer Portfolio" />
+                <img src="images/project1.png" alt="Personal Portfolio" />
               </div>
               <div class="work-info">
                 <span class="work-num">01</span>
-                <h3 class="work-name">Developer Portfolio</h3>
-                <p class="work-desc">A modern dark-themed portfolio with GSAP animations and immersive 3D elements.</p>
+                <h3 class="work-name">Personal Portfolio</h3>
+                <p class="work-desc">A modern developer portfolio showcasing my projects, skills, and experiments with
+                  interactive UI and smooth animations.</p>
               </div>
             </div>
+          </a>
 
+          <a href="https://github.com/Rixhabh-k/Figma-Lite" target="_blank" rel="noopener noreferrer"
+            class="work-item-link">
             <div class="work-item" data-tilt>
               <div class="work-img-wrap">
-                <img src="images/work-dashboard.png" alt="SaaS Dashboard" />
+                <img src="images/project2.png" alt="Web-Based Figma" />
               </div>
               <div class="work-info">
                 <span class="work-num">02</span>
-                <h3 class="work-name">SaaS Dashboard</h3>
-                <p class="work-desc">Analytics dashboard with real-time data visualisation and dark mode interface.</p>
+                <h3 class="work-name">Web-Based Figma</h3>
+                <p class="work-desc">A browser-based design tool inspired by Figma that allows users to create and edit
+                  UI layouts directly on the web.</p>
               </div>
             </div>
+          </a>
 
+          <a href="https://github.com/Rixhabh-k/Window-OS-Clone" target="_blank" rel="noopener noreferrer"
+            class="work-item-link">
             <div class="work-item" data-tilt>
               <div class="work-img-wrap">
-                <img src="images/work-landing.png" alt="Startup Landing Page" />
+                <img src="images/project3.png" alt="Web-Based Windows OS" />
               </div>
               <div class="work-info">
                 <span class="work-num">03</span>
-                <h3 class="work-name">Startup Landing Page</h3>
-                <p class="work-desc">High-converting landing page with gradient hero and floating 3D elements.</p>
+                <h3 class="work-name">Web-Based Windows OS</h3>
+                <p class="work-desc">A Windows-inspired web interface that simulates a desktop environment with apps,
+                  folders, and interactive UI elements.</p>
               </div>
             </div>
+          </a>
 
+          <a href="https://github.com/Rixhabh-k/QuickHelp" target="_blank" rel="noopener noreferrer"
+            class="work-item-link">
             <div class="work-item" data-tilt>
               <div class="work-img-wrap">
-                <img src="images/work-ecommerce.png" alt="Ecommerce Platform" />
+                <img src="images/project4.png" alt="Quick Emergency Assistant" />
               </div>
               <div class="work-info">
                 <span class="work-num">04</span>
-                <h3 class="work-name">Ecommerce Platform</h3>
-                <p class="work-desc">Minimal ecommerce experience with elegant product showcase and smooth checkout.</p>
+                <h3 class="work-name">Quick Emergency Assistant</h3>
+                <p class="work-desc">A web app designed to quickly connect users with emergency contacts and essential
+                  assistance during urgent situations.</p>
               </div>
+            </div>
+          </a>
+        </div>
+
+        <a href="https://github.com/Rixhabh-k" target="_blank" rel="noopener noreferrer" class="view-all-work">
+          <span>View All Work</span>
+          <i class="ri-arrow-right-up-line"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills / Tools Section -->
+    <section class="skills-section">
+      <div class="skills-header">
+        <span class="skills-label">TECH STACK</span>
+        <h2 class="skills-title">TOOLS & SKILLS</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-box" style="--glow: #e34f26">
+          <i class="devicon-html5-plain"></i>
+          <span>HTML</span>
+        </div>
+        <div class="skill-box" style="--glow: #1572b6">
+          <i class="devicon-css3-plain"></i>
+          <span>CSS</span>
+        </div>
+        <div class="skill-box" style="--glow: #f7df1e">
+          <i class="devicon-javascript-plain"></i>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-box empty"></div>
+        <div class="skill-box" style="--glow: #cc6699">
+          <i class="devicon-sass-original"></i>
+          <span>SCSS</span>
+        </div>
+        <div class="skill-box" style="--glow: #06b6d4">
+          <i class="devicon-tailwindcss-original"></i>
+          <span>Tailwind</span>
+        </div>
+        <div class="skill-box" style="--glow: #61dafb">
+          <i class="devicon-react-original"></i>
+          <span>React</span>
+        </div>
+        <div class="skill-box" style="--glow: #a0a0a0">
+          <i class="devicon-express-original"></i>
+          <span>Express.js</span>
+        </div>
+        <div class="skill-box empty"></div>
+        <div class="skill-box" style="--glow: #47a248">
+          <i class="devicon-mongodb-plain"></i>
+          <span>MongoDB</span>
+        </div>
+        <div class="skill-box" style="--glow: #880000">
+          <i class="devicon-mongoose-original"></i>
+          <span>Mongoose</span>
+        </div>
+        <div class="skill-box" style="--glow: #a259ff">
+          <i class="devicon-figma-plain"></i>
+          <span>Figma</span>
+        </div>
+        <div class="skill-box" style="--glow: #7b68ee">
+          <i class="devicon-canva-original"></i>
+          <span>Canva</span>
+        </div>
+        <div class="skill-box" style="--glow: #ff6c37">
+          <i class="devicon-postman-plain"></i>
+          <span>Postman</span>
+        </div>
+        <div class="skill-box empty"></div>
+        <div class="skill-box" style="--glow: #10a37f">
+          <i class="ri-openai-fill"></i>
+          <span>ChatGPT</span>
+        </div>
+        <div class="skill-box" style="--glow: #8b5cf6">
+          <i class="ri-sparkling-2-fill"></i>
+          <span>Antigravity</span>
+        </div>
+        <div class="skill-box" style="--glow: #e07c4f">
+          <i class="ri-brain-fill"></i>
+          <span>Claude</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+
+      <div class="contact-content">
+        <span class="contact-label">CONTACT</span>
+        <h2 class="contact-heading">LET'S BUILD<br>SOMETHING <span>AMAZING</span></h2>
+        <p class="contact-sub">Have a project idea or collaboration in mind?<br>Let's connect.</p>
+
+        <div class="contact-card">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="ri-phone-fill"></i></div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Phone</span>
+              <a href="tel:+917982618598">+91 7982618598</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="ri-mail-fill"></i></div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Email</span>
+              <a href="mailto:rixhabhk@gmail.com">rixhabhk@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="ri-map-pin-fill"></i></div>
+            <div class="contact-detail">
+              <span class="contact-detail-label">Address</span>
+              <span>Ghaziabad, Uttar Pradesh, India</span>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Skills / Tools Section -->
-      <section class="skills-section">
-        <div class="skills-header">
-          <span class="skills-label">TECH STACK</span>
-          <h2 class="skills-title">TOOLS & SKILLS</h2>
+        <div class="contact-socials">
+          <a href="https://instagram.com/rixhabh.json" target="_blank" rel="noopener noreferrer" class="social-link"
+            aria-label="Instagram">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="https://github.com/Rixhabh-k" target="_blank" rel="noopener noreferrer" class="social-link"
+            aria-label="GitHub">
+            <i class="ri-github-fill"></i>
+          </a>
+          <a href="https://in.linkedin.com/in/rishabh-kharwar-b6564b360" target="_blank" rel="noopener noreferrer" class="social-link"
+            aria-label="LinkedIn">
+            <i class="ri-linkedin-fill"></i>
+          </a>
         </div>
 
-        <div class="skills-grid">
-          <div class="skill-box" style="--glow: #e34f26">
-            <i class="devicon-html5-plain"></i>
-            <span>HTML</span>
-          </div>
-          <div class="skill-box" style="--glow: #1572b6">
-            <i class="devicon-css3-plain"></i>
-            <span>CSS</span>
-          </div>
-          <div class="skill-box" style="--glow: #f7df1e">
-            <i class="devicon-javascript-plain"></i>
-            <span>JavaScript</span>
-          </div>
-          <div class="skill-box empty"></div>
-          <div class="skill-box" style="--glow: #cc6699">
-            <i class="devicon-sass-original"></i>
-            <span>SCSS</span>
-          </div>
-          <div class="skill-box" style="--glow: #06b6d4">
-            <i class="devicon-tailwindcss-original"></i>
-            <span>Tailwind</span>
-          </div>
-          <div class="skill-box" style="--glow: #61dafb">
-            <i class="devicon-react-original"></i>
-            <span>React</span>
-          </div>
-          <div class="skill-box" style="--glow: #a0a0a0">
-            <i class="devicon-express-original"></i>
-            <span>Express.js</span>
-          </div>
-          <div class="skill-box empty"></div>
-          <div class="skill-box" style="--glow: #47a248">
-            <i class="devicon-mongodb-plain"></i>
-            <span>MongoDB</span>
-          </div>
-          <div class="skill-box" style="--glow: #880000">
-            <i class="devicon-mongoose-original"></i>
-            <span>Mongoose</span>
-          </div>
-          <div class="skill-box" style="--glow: #a259ff">
-            <i class="devicon-figma-plain"></i>
-            <span>Figma</span>
-          </div>
-          <div class="skill-box" style="--glow: #7b68ee">
-            <i class="devicon-canva-original"></i>
-            <span>Canva</span>
-          </div>
-          <div class="skill-box" style="--glow: #ff6c37">
-            <i class="devicon-postman-plain"></i>
-            <span>Postman</span>
-          </div>
-          <div class="skill-box empty"></div>
-          <div class="skill-box" style="--glow: #10a37f">
-            <i class="ri-openai-fill"></i>
-            <span>ChatGPT</span>
-          </div>
-          <div class="skill-box" style="--glow: #8b5cf6">
-            <i class="ri-sparkling-2-fill"></i>
-            <span>Antigravity</span>
-          </div>
-          <div class="skill-box" style="--glow: #e07c4f">
-            <i class="ri-brain-fill"></i>
-            <span>Claude</span>
-          </div>
-        </div>
-      </section>
+        <p class="contact-footer">Designed & built with passion ✦</p>
+      </div>
+    </section>
 
-      <!-- Contact Section -->
-      <section class="contact-section">
-        <div class="contact-blobs">
-          <div class="blob blob-1"></div>
-          <div class="blob blob-2"></div>
-          <div class="blob blob-3"></div>
-        </div>
+  </div>
 
-        <div class="contact-content">
-          <span class="contact-label">CONTACT</span>
-          <h2 class="contact-heading">LET'S BUILD<br>SOMETHING <span>AMAZING</span></h2>
-          <p class="contact-sub">Have a project idea or collaboration in mind?<br>Let's connect.</p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-          <div class="contact-card">
-            <div class="contact-item">
-              <div class="contact-icon"><i class="ri-phone-fill"></i></div>
-              <div class="contact-detail">
-                <span class="contact-detail-label">Phone</span>
-                <a href="tel:+917982618598">+91 7982618598</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon"><i class="ri-mail-fill"></i></div>
-              <div class="contact-detail">
-                <span class="contact-detail-label">Email</span>
-                <a href="mailto:rixhabhk@gmail.com">rixhabhk@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon"><i class="ri-map-pin-fill"></i></div>
-              <div class="contact-detail">
-                <span class="contact-detail-label">Address</span>
-                <span>Ghaziabad, Uttar Pradesh, India</span>
-              </div>
-            </div>
-          </div>
+  <script src="script.js"></script>
+</body>
 
-          <p class="contact-footer">Designed & built with passion ✦</p>
-        </div>
-      </section>
-
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <script src="script.js"></script>
-  </body>
 </html>

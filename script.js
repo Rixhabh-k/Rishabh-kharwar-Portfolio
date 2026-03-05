@@ -1,6 +1,8 @@
 console.log("script start");
 console.log(gsap)
 console.log(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
+
 const percent = document.querySelector(".percent");
 const loader = document.querySelector("#loader");
 
@@ -50,6 +52,71 @@ function reveal() {
     },
   });
 }
+
+// cursor 
+
+const ring = document.querySelector(".cursor-ring");
+const dot = document.querySelector(".cursor-dot");
+
+let mouseX = 0;
+let mouseY = 0;
+
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  // dot follows instantly
+  gsap.set(dot, {
+    x: mouseX,
+    y: mouseY
+  });
+
+  // ring follows with smooth delay
+  gsap.to(ring, {
+    x: mouseX,
+    y: mouseY,
+    duration: 0.4,
+    ease: "power3.out"
+  });
+});
+
+// smooth scroll 
+gsap.registerPlugin(ScrollTrigger);
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("#main"),
+  smooth: true,
+  multiplier: 1,
+  lerp: 0.08
+});
+
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy("#main", {
+  scrollTop(value) {
+    return arguments.length
+      ? locoScroll.scrollTo(value, 0, 0)
+      : locoScroll.scroll.instance.scroll.y;
+  },
+
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+  },
+
+  pinType: document.querySelector("#main").style.transform
+    ? "transform"
+    : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+// smooth scroll 
 
 const canvas = document.getElementById("webgl");
 
@@ -149,15 +216,12 @@ menuBtn.addEventListener("click", () => {
 
 // about – parallax scroll reveal
 
-gsap.registerPlugin(ScrollTrigger);
-
 const tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".about",
     start: "top 85%",
     end: "top 35%",
-    scrub: 1,
-    markers: true
+    scrub: 1
   }
 });
 
@@ -310,7 +374,19 @@ document.querySelectorAll("[data-tilt]").forEach((card) => {
 });
 
 
-// ======== Skills Section Animations ========
+// ======== Skills Section ========
+
+// Randomize skill box positions (shuffle the 3 empty cards among the 15 filled ones)
+(function shuffleSkillGrid() {
+  const grid = document.querySelector(".skills-grid");
+  const boxes = Array.from(grid.children);
+  // Fisher-Yates shuffle
+  for (let i = boxes.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [boxes[i], boxes[j]] = [boxes[j], boxes[i]];
+  }
+  boxes.forEach(box => grid.appendChild(box));
+})();
 
 // Header reveal
 gsap.from(".skills-header", {
