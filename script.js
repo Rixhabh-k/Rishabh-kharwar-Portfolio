@@ -3,6 +3,20 @@ console.log(gsap)
 console.log(ScrollTrigger)
 gsap.registerPlugin(ScrollTrigger);
 
+const coords = document.querySelector(".cursor-coords");
+const xLabel = document.querySelector(".coord-x");
+const yLabel = document.querySelector(".coord-y");
+
+window.addEventListener("mousemove", (e)=>{
+
+  coords.style.left = e.clientX + 12 + "px";
+  coords.style.top = e.clientY + 12 + "px";
+
+  xLabel.textContent = "X: " + Math.round(e.clientX) + "px";
+  yLabel.textContent = "Y: " + Math.round(e.clientY) + "px";
+
+});
+
 const percent = document.querySelector(".percent");
 const loader = document.querySelector("#loader");
 
@@ -470,7 +484,7 @@ contactTl.from(".contact-card", {
 }, "-=0.3");
 
 // Contact items stagger
-contactTl.from(".contact-item", {
+contactTl.from(".form-group", {
   opacity: 0,
   x: -30,
   duration: 0.5,
@@ -478,9 +492,74 @@ contactTl.from(".contact-item", {
   ease: "power3.out",
 }, "-=0.4");
 
+// Submit button
+contactTl.from(".contact-submit-btn", {
+  opacity: 0,
+  y: 20,
+  duration: 0.5,
+  ease: "power3.out",
+}, "-=0.2");
+
 // Footer
 contactTl.from(".contact-footer", {
   opacity: 0,
   duration: 0.5,
   ease: "power2.out",
 }, "-=0.2");
+
+
+// ======== Contact Form – SheetDB Submission ========
+
+const contactForm = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
+const formStatus = document.getElementById("formStatus");
+
+// ⚠️  Replace with your actual SheetDB API URL
+const SHEETDB_API_URL = "https://sheetdb.io/api/v1/c6ecn42zrvcd5";
+
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  // Gather data
+  const formData = {
+    data: {
+      name: document.getElementById("userName").value.trim(),
+      phone: document.getElementById("userPhone").value.trim(),
+      email: document.getElementById("userEmail").value.trim(),
+      message: document.getElementById("userMessage").value.trim(),
+    },
+  };
+
+  // Show loader
+  submitBtn.disabled = true;
+  submitBtn.querySelector(".btn-text").style.display = "none";
+  submitBtn.querySelector(".btn-icon").style.display = "none";
+  submitBtn.querySelector(".btn-loader").style.display = "inline-flex";
+  formStatus.textContent = "";
+  formStatus.className = "form-status";
+
+  try {
+    const res = await fetch(SHEETDB_API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      formStatus.textContent = "Message sent successfully! ✦";
+      formStatus.classList.add("success");
+      contactForm.reset();
+    } else {
+      throw new Error("Failed to send");
+    }
+  } catch (err) {
+    formStatus.textContent = "Something went wrong. Please try again.";
+    formStatus.classList.add("error");
+  } finally {
+    // Restore button
+    submitBtn.disabled = false;
+    submitBtn.querySelector(".btn-text").style.display = "";
+    submitBtn.querySelector(".btn-icon").style.display = "";
+    submitBtn.querySelector(".btn-loader").style.display = "none";
+  }
+});

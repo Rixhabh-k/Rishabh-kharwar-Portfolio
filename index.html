@@ -26,8 +26,10 @@
 <body>
 
   
-  <div class="cursor-ring"></div>
-  <div class="cursor-dot"></div>
+ <div class="cursor-coords">
+  <div class="coord-x">X: 0px</div>
+  <div class="coord-y">Y: 0px</div>
+</div>
   <div id="loader">
     <canvas id="webgl"></canvas>
 
@@ -56,7 +58,7 @@
         <div class="middle-text">
           <div class="text-m">
             <h1>
-              PR <span><img src="images/toggle 1.svg" alt="" /></span>DUCT
+              <span class="desktop-only">PR </span><span class="toggle-img"><img src="images/toggle 1.svg" alt="" /></span><span class="desktop-only">DUCT</span><span class="mobile-only">PRODUCT</span>
             </h1>
           </div>
         </div>
@@ -66,6 +68,7 @@
           <div class="designer-i"></div>
           <h1>GNER</h1>
         </div>
+        <p class="hero-mobile-sub">Building modern digital experiences<br>through design & development.</p>
         <p>Open to new job offers <span class="active-green"></span></p>
       </div>
     </section>
@@ -338,29 +341,42 @@
         <h2 class="contact-heading">LET'S BUILD<br>SOMETHING <span>AMAZING</span></h2>
         <p class="contact-sub">Have a project idea or collaboration in mind?<br>Let's connect.</p>
 
-        <div class="contact-card">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="ri-phone-fill"></i></div>
-            <div class="contact-detail">
-              <span class="contact-detail-label">Phone</span>
-              <a href="tel:+917982618598">+91 7982618598</a>
+        <form class="contact-card contact-form" id="contactForm">
+          <div class="form-group">
+            <div class="form-icon"><i class="ri-user-fill"></i></div>
+            <div class="form-field">
+              <label for="userName">Name</label>
+              <input type="text" id="userName" name="name" placeholder="Your full name" required />
             </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="ri-mail-fill"></i></div>
-            <div class="contact-detail">
-              <span class="contact-detail-label">Email</span>
-              <a href="mailto:rixhabhk@gmail.com">rixhabhk@gmail.com</a>
+          <div class="form-group">
+            <div class="form-icon"><i class="ri-phone-fill"></i></div>
+            <div class="form-field">
+              <label for="userPhone">Phone Number</label>
+              <input type="tel" id="userPhone" name="phone" placeholder="Your phone number" required />
             </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="ri-map-pin-fill"></i></div>
-            <div class="contact-detail">
-              <span class="contact-detail-label">Address</span>
-              <span>Ghaziabad, Uttar Pradesh, India</span>
+          <div class="form-group">
+            <div class="form-icon"><i class="ri-mail-fill"></i></div>
+            <div class="form-field">
+              <label for="userEmail">Email</label>
+              <input type="email" id="userEmail" name="email" placeholder="Your email address" required />
             </div>
           </div>
-        </div>
+          <div class="form-group">
+            <div class="form-icon"><i class="ri-message-3-fill"></i></div>
+            <div class="form-field">
+              <label for="userMessage">Message</label>
+              <textarea id="userMessage" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="contact-submit-btn" id="submitBtn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loader" style="display:none;"><i class="ri-loader-4-line"></i></span>
+            <i class="ri-send-plane-fill btn-icon"></i>
+          </button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
 
         <div class="contact-socials">
           <a href="https://instagram.com/rixhabh.json" target="_blank" rel="noopener noreferrer" class="social-link"
